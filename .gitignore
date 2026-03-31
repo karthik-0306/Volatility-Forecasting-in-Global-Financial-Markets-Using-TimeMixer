@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Project Specific
+Data/*.csv            # Usually large data is ignored
+models/               # Pickle/model artifacts
+mlruns/               # MLflow artifacts
+results/figures/      # Locally generated figures
+results/tables/       # Locally generated tables
+results/metrics/      # Locally generated metrics (keep if you want a leaderboard in repo)
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

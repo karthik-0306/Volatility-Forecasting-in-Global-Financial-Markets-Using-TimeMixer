@@ -1,0 +1,92 @@
+# ============================================================
+# Volatility Forecasting — Central Configuration
+# ============================================================
+
+project:
+  name: "Volatility Forecasting in Global Financial Markets Using TimeMixer"
+  version: "2.0.0"
+  author: "Karthik Thota"
+  description: "Professional implementation extending the TimeMixer paper by Alex Y. Li (arXiv:2410.09062)"
+
+# ─── Paths ───────────────────────────────────────────────────
+paths:
+  data:
+    stock:    "Data/stock.csv"
+    etf:      "Data/index_etf.csv"
+    forex:    "Data/forex.csv"
+    crypto:   "Data/crypto.csv"
+  models:
+    timemixer:  "models/timemixer/"
+    garch:      "models/garch/"
+    baselines:  "models/baselines/"
+  results:
+    metrics:    "results/metrics/"
+    figures:    "results/figures/"
+    tables:     "results/tables/"
+  mlflow_uri:   "mlruns/"
+
+# ─── Data ────────────────────────────────────────────────────
+data:
+  split_date: "2024-01-01"          # Train < split_date, Test >= split_date
+  date_column: "Date"
+  ticker_column: "Ticker"
+  ohlcv_columns: ["Open", "High", "Low", "Close", "Volume"]
+
+  # Volatility estimation
+  volatility:
+    primary_estimator: "yang_zhang"  # yang_zhang (primary) | rolling_std (paper baseline for comparison)
+    rolling_window: 21               # Days for rolling calculations
+    annualization_factor: 252        # Trading days per year
+
+  # GARCH baseline runs on ALL tickers — no representative subset needed
+
+# ─── TimeMixer Model ─────────────────────────────────────────
+timemixer:
+  horizons: [12, 96, 192, 336, 720]   # Forecast horizons (days)
+  input_size: 96                       # Lookback window (days)
+  max_steps: 2000                      # Training steps
+  learning_rate: 0.001
+  dropout: 0.3
+  scaler_type: "identity"
+  random_seed: 42
+  freq: "D"                            # Daily frequency
+  start_padding_enabled: true
+
+  # Hyperparameter grid for tuning (Phase 4)
+  tuning:
+    input_sizes:    [48, 96, 192]
+    learning_rates: [0.0005, 0.001, 0.003]
+    dropouts:       [0.1, 0.2, 0.3]
+    max_steps_opts: [1000, 2000, 3000]
+
+# ─── Baseline Model ──────────────────────────────────────────
+# Single baseline: GARCH(1,1) — the industry-standard for volatility.
+# Runs on ALL 40 tickers × all 5 horizons for a symmetric comparison.
+baselines:
+  garch:
+    p: 1
+    q: 1
+    vol: "Garch"               # Options: Garch, EGARCH, GJR-GARCH
+    dist: "normal"
+
+# ─── Evaluation ──────────────────────────────────────────────
+evaluation:
+  metrics: ["MAE", "MSE", "RMSE", "MAPE", "sMAPE", "QLIKE", "R2", "HitRate"]
+  significance_level: 0.05      # For Diebold-Mariano test
+
+# ─── MLflow ──────────────────────────────────────────────────
+mlflow:
+  experiment_name: "TimeMixer_Volatility_Forecasting"
+  tracking_uri: "mlruns/"       # Local tracking (no server needed)
+
+# ─── Visualization ───────────────────────────────────────────
+viz:
+  dpi: 300
+  figsize_wide: [16, 6]
+  figsize_square: [10, 8]
+  style: "seaborn-v0_8-whitegrid"
+  color_palette:
+    timemixer:  "#2563EB"   # Blue
+    garch:      "#DC2626"   # Red
+    actual:     "#1F2937"   # Dark
+    confidence: "#BFDBFE"   # Light blue

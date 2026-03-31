@@ -1,0 +1,49 @@
+# ============================================================
+# Volatility Forecasting — Requirements
+# ============================================================
+
+# Core Data Science
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+
+# Time Series Forecasting
+neuralforecast>=1.7.0
+statsforecast>=1.6.0
+
+# PyTorch (CUDA 12.4 — already installed in bash_ai_env)
+# torch==2.5.1+cu124  ← already in env, do not reinstall
+
+# Volatility / Financial Models
+arch>=6.2.0           # GARCH models
+prophet>=1.1.5        # Facebook Prophet
+statsmodels>=0.14.0   # ARIMA, statistical tests
+
+# Financial Data
+yfinance>=0.2.36
+pandas-ta>=0.3.14b0   # Technical indicators
+
+# Experiment Tracking
+mlflow>=2.11.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.18.0
+
+# Utilities
+pyyaml>=6.0           # YAML config parsing
+tqdm>=4.65.0          # Progress bars
+joblib>=1.3.0         # Parallel processing
+python-dateutil>=2.8.2
+
+# Web App (Phase 8)
+fastapi>=0.110.0
+uvicorn>=0.27.0
+python-multipart>=0.0.9
+
+# Notebook
+ipykernel>=6.0.0
+ipywidgets>=8.0.0
+nbformat>=5.9.0

@@ -1,0 +1,5 @@
+2026-03-29 19:53:21 | INFO     | src.data.loader | Loading stock data from: /home/thota23/Volatility-Forecasting-in-Global-Financial-Markets-Using-TimeMixer/Data/stock.csv
+2026-03-29 19:53:21 | INFO     | src.data.loader |   ✓ stock: 56,619 rows | 10 tickers | 2010-01-04 → 2025-10-17
+2026-03-29 19:53:21 | INFO     | src.data.preprocessing | Computing volatility | estimator=yang_zhang | window=21d
+2026-03-29 19:53:21 | INFO     | src.data.preprocessing |   ✓ Volatility computed: 2,979 rows | 1 tickers
+2026-03-29 19:53:24 | INFO     | src.models.evaluation | SmokeTest | MAE=0.0085 RMSE=0.0102 sMAPE=12.06% R²=0.9854 HitRate=91.9%
