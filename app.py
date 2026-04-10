@@ -85,8 +85,14 @@ def predict_volatility(req: PredictRequest):
         if not model_path.exists():
             raise HTTPException(status_code=404, detail="Model weights not found for this horizon.")
         
-        with open(model_path, "rb") as f:
-            model = pickle.load(f)
+        import torch
+        _original_torch_load = torch.load
+        try:
+            torch.load = lambda *a, **k: _original_torch_load(*a, **{**k, "map_location": "cpu"})
+            with open(model_path, "rb") as f:
+                model = pickle.load(f)
+        finally:
+            torch.load = _original_torch_load
 
         # 4. Instant inference
         forecast = model.predict(df=nf_input)
