@@ -94,6 +94,14 @@ def predict_volatility(req: PredictRequest):
         finally:
             torch.load = _original_torch_load
 
+        # Overwrite baked-in GPU trainer config to enforce pure CPU inference on Render
+        if hasattr(model, 'models'):
+            for m in model.models:
+                if hasattr(m, 'trainer_kwargs'):
+                    m.trainer_kwargs['accelerator'] = 'cpu'
+                    if 'devices' in m.trainer_kwargs:
+                        del m.trainer_kwargs['devices']
+
         # 4. Instant inference
         forecast = model.predict(df=nf_input)
 
