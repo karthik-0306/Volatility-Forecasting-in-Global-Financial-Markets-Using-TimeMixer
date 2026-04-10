@@ -61,7 +61,13 @@ def get_tickers():
 def predict_volatility(req: PredictRequest):
     try:
         # 1. Download ~6mo of live data
-        yf_ticker = yf.Ticker(req.ticker)
+        v_ticker = req.ticker
+        if req.asset_class == "forex" and not v_ticker.endswith("=X"):
+            v_ticker += "=X"
+        elif req.asset_class == "crypto" and not v_ticker.endswith("-USD"):
+            v_ticker += "-USD"
+
+        yf_ticker = yf.Ticker(v_ticker)
         df_live = yf_ticker.history(period="6mo").reset_index()
 
         if len(df_live) < 100:
