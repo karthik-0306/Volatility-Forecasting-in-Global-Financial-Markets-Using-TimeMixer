@@ -1,0 +1,139 @@
+2026-04-06 16:04:20 | INFO     | src.data.loader | Loading stock data from: /home/thota23/Volatility-Forecasting-in-Global-Financial-Markets-Using-TimeMixer/Data/stock.csv
+2026-04-06 16:04:20 | INFO     | src.data.loader |   ✓ stock: 58,259 rows | 10 tickers | 2010-01-04 → 2026-03-30
+2026-04-06 16:04:20 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:04:20 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:04:20 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:09:27 | INFO     | src.data.loader | Loading stock data from: /home/thota23/Volatility-Forecasting-in-Global-Financial-Markets-Using-TimeMixer/Data/stock.csv
+2026-04-06 16:09:27 | INFO     | src.data.loader |   ✓ stock: 58,259 rows | 10 tickers | 2010-01-04 → 2026-03-30
+2026-04-06 16:09:27 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:09:27 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:09:27 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:11:42 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:11:42 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:11:42 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:13:54 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:13:54 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:13:54 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:16:11 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:16:11 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:16:11 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:18:25 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:18:25 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:18:25 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:20:41 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:20:41 | INFO     | src.data.preprocessing |   ✓ 5,043 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:20:41 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 4,223 rows | Test: 820 rows
+2026-04-06 16:22:58 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:22:58 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:22:58 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:25:12 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:25:12 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:25:12 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:27:25 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:27:25 | INFO     | src.data.preprocessing |   ✓ 5,732 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:27:25 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 4,912 rows | Test: 820 rows
+2026-04-06 16:29:38 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:29:38 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:29:38 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:31:51 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:31:51 | WARNING  | src.data.preprocessing | No volatility results computed (empty input or insufficient data).
+2026-04-06 16:31:51 | INFO     | src.data.loader | Loading etf data from: /home/thota23/Volatility-Forecasting-in-Global-Financial-Markets-Using-TimeMixer/Data/index_etf.csv
+2026-04-06 16:31:51 | INFO     | src.data.loader |   ✓ etf: 57,865 rows | 10 tickers | 2010-01-04 → 2026-03-30
+2026-04-06 16:31:51 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:31:51 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:31:51 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:34:06 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:34:06 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:34:06 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:36:20 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:36:20 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:36:20 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:38:34 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:38:34 | INFO     | src.data.preprocessing |   ✓ 5,127 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:38:34 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 4,307 rows | Test: 820 rows
+2026-04-06 16:40:56 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:40:56 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:40:56 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:43:19 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:43:19 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:43:19 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:45:42 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:45:42 | INFO     | src.data.preprocessing |   ✓ 5,254 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:45:42 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 4,434 rows | Test: 820 rows
+2026-04-06 16:48:05 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:48:05 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:48:05 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:50:23 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:50:23 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:50:23 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:52:36 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:52:36 | INFO     | src.data.preprocessing |   ✓ 5,908 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:52:36 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,088 rows | Test: 820 rows
+2026-04-06 16:54:48 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:54:48 | WARNING  | src.data.preprocessing | No volatility results computed (empty input or insufficient data).
+2026-04-06 16:54:48 | INFO     | src.data.loader | Loading forex data from: /home/thota23/Volatility-Forecasting-in-Global-Financial-Markets-Using-TimeMixer/Data/forex.csv
+2026-04-06 16:54:48 | INFO     | src.data.loader |   ✓ forex: 59,330 rows | 10 tickers | 2010-01-01 → 2026-03-30
+2026-04-06 16:54:48 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:54:48 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:54:49 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 16:57:03 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:57:03 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:57:03 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 16:59:16 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 16:59:16 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 16:59:16 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 17:01:28 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:01:28 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:01:28 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 17:03:42 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:03:42 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:03:42 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 17:05:54 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:05:54 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:05:54 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 17:08:11 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:08:11 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:08:11 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 17:10:32 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:10:32 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:10:32 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 17:12:54 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:12:54 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:12:54 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 17:15:11 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:15:11 | INFO     | src.data.preprocessing |   ✓ 5,911 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:15:11 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 5,092 rows | Test: 819 rows
+2026-04-06 17:17:29 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:17:29 | WARNING  | src.data.preprocessing | No volatility results computed (empty input or insufficient data).
+2026-04-06 17:17:29 | INFO     | src.data.loader | Loading crypto data from: /home/thota23/Volatility-Forecasting-in-Global-Financial-Markets-Using-TimeMixer/Data/crypto.csv
+2026-04-06 17:17:29 | INFO     | src.data.loader |   ✓ crypto: 31,030 rows | 10 tickers | 2014-09-17 → 2026-03-29
+2026-04-06 17:17:29 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:17:29 | INFO     | src.data.preprocessing |   ✓ 3,042 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:17:29 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 2,223 rows | Test: 819 rows
+2026-04-06 17:19:44 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:19:44 | INFO     | src.data.preprocessing |   ✓ 3,042 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:19:44 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 2,223 rows | Test: 819 rows
+2026-04-06 17:22:03 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:22:03 | INFO     | src.data.preprocessing |   ✓ 3,042 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:22:03 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 2,223 rows | Test: 819 rows
+2026-04-06 17:24:21 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:24:21 | INFO     | src.data.preprocessing |   ✓ 4,191 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:24:21 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 3,372 rows | Test: 819 rows
+2026-04-06 17:26:37 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:26:37 | INFO     | src.data.preprocessing |   ✓ 3,042 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:26:37 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 2,223 rows | Test: 819 rows
+2026-04-06 17:28:53 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:28:53 | INFO     | src.data.preprocessing |   ✓ 2,027 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:28:53 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 1,208 rows | Test: 819 rows
+2026-04-06 17:31:19 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:31:19 | INFO     | src.data.preprocessing |   ✓ 3,042 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:31:19 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 2,223 rows | Test: 819 rows
+2026-04-06 17:33:44 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:33:44 | INFO     | src.data.preprocessing |   ✓ 4,191 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:33:44 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 3,372 rows | Test: 819 rows
+2026-04-06 17:36:11 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:36:11 | INFO     | src.data.preprocessing |   ✓ 2,159 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:36:11 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 1,340 rows | Test: 819 rows
+2026-04-06 17:38:37 | INFO     | src.data.preprocessing | Computing volatility | window=21d | primary=Yang-Zhang
+2026-04-06 17:38:37 | INFO     | src.data.preprocessing |   ✓ 3,042 rows | 1 tickers | cols: ['ds', 'yz_vol', 'rolling_vol', 'unique_id', 'y']
+2026-04-06 17:38:37 | INFO     | src.data.preprocessing | Split at 2024-01-01 | Train: 2,223 rows | Test: 819 rows

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Asset Volatility Forecaster</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-orb" id="orb1"></div>
+    <div class="glow-orb" id="orb2"></div>
+
+    <div class="container">
+        <header>
+            <h1>Global Asset Volatility <span class="accent">Forecaster</span></h1>
+            <p>Institutional-grade Deep Learning Volatility Forecasting</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Controls Panel -->
+            <div class="glass-panel controls">
+                <h2>Asset Selection</h2>
+                
+                <div class="input-group">
+                    <label>Asset Class</label>
+                    <select id="asset-class" onchange="loadTickers()">
+                        <option value="all">All Markets</option>
+                        <option value="stock">Equities (Stock)</option>
+                        <option value="etf">Index / ETFs</option>
+                        <option value="forex">Forex</option>
+                        <option value="crypto">Cryptocurrency</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Target Ticker</label>
+                    <select id="ticker-select" onchange="triggerForecast()">
+                        <option value="" disabled selected>Loading...</option>
+                    </select>
+                </div>
+
+                <h2>Horizon <span class="small">(Days)</span></h2>
+                <div class="horizon-toggle" id="horizon-group">
+                    <button class="hz-btn active" data-val="12">12D</button>
+                    <button class="hz-btn" data-val="96">96D</button>
+                    <button class="hz-btn" data-val="192">192D</button>
+                    <button class="hz-btn" data-val="336">336D</button>
+                    <button class="hz-btn" data-val="720">720D</button>
+                </div>
+
+                <button class="primary-btn" onclick="triggerForecast()">Generate Forecast</button>
+            </div>
+
+            <!-- Visualization Panel -->
+            <div class="glass-panel visualizer margin-bottom">
+                <div class="chart-header">
+                    <h2>Volatility Projection: <span id="display-ticker" class="accent">---</span></h2>
+                    <!-- Daily Selector Dropdown -->
+                    <div class="daily-inspector">
+                        <label>Inspect Date:</label>
+                        <select id="date-select" onchange="inspectSpecificDate()">
+                            <option value="">Awaiting Forecast...</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="volatilityChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Focus Daily Stats Panel -->
+            <div class="glass-panel focus-panel">
+                <div class="focus-header">
+                    <h2>Target Date Analysis</h2>
+                    <div id="risk-badge" class="badge neutral">AWAITING</div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <span class="label">Historical Baseline</span>
+                        <span class="value" id="val-baseline">0.0000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Predicted Volatility</span>
+                        <span class="value accent" id="val-projected">0.0000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Deviation</span>
+                        <span class="value" id="val-delta">0.0%</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

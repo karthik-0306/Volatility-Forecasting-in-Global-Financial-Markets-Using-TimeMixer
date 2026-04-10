@@ -11,6 +11,27 @@ Usage:
 """
 
 import os
+os.environ["LIT_LOG_LEVEL"] = "error" # Lightning log level
+os.environ["PYTORCH_LIGHTNING_SUPPRESS_WARNINGS"] = "1"
+# os.environ["CUDA_VISIBLE_DEVICES"] = ""   # Disabled to allow GPU training as requestedm noise
+
+import logging
+import warnings
+# Suppress PyTorch Lightning and system noise
+logging.getLogger("pytorch_lightning").setLevel(logging.ERROR)
+logging.getLogger("pytorch_lightning.core").setLevel(logging.ERROR)
+logging.getLogger("pytorch_lightning.utilities").setLevel(logging.ERROR)
+logging.getLogger("pytorch_lightning.accelerators").setLevel(logging.ERROR)
+logging.getLogger("pytorch_lightning.utilities.seed").setLevel(logging.ERROR)
+logging.getLogger("lightning").setLevel(logging.ERROR)
+logging.getLogger("lightning_fabric.utilities.seed").setLevel(logging.ERROR)
+logging.getLogger("lightning_fabric").setLevel(logging.ERROR)
+warnings.filterwarnings("ignore", category=UserWarning, module="pytorch_lightning")
+warnings.filterwarnings("ignore", category=UserWarning, module="lightning_fabric")
+warnings.filterwarnings("ignore", ".*Tip: For seamless cloud logging*")
+warnings.filterwarnings("ignore", ".*You are using a CUDA device*")
+warnings.filterwarnings("ignore", ".*Seed set to*")
+
 import pickle
 import pandas as pd
 import numpy as np
@@ -69,6 +90,7 @@ class TimeMixerTrainer:
         learning_rate: Optional[float] = None,
         dropout: Optional[float] = None,
         run_name: Optional[str] = None,
+        ticker: Optional[str] = None,
     ) -> NeuralForecast:
         """
         Train a TimeMixer model and log everything to MLflow.
@@ -94,9 +116,11 @@ class TimeMixerTrainer:
         n_series      = train_df["unique_id"].nunique()
 
         if run_name is None:
-            run_name = f"TimeMixer_{asset_type}_h{horizon}"
+            prefix = f"TimeMixer_{ticker}" if ticker else f"TimeMixer_{asset_type}"
+            run_name = f"{prefix}_h{horizon}"
 
-        log.info(f"Training TimeMixer | {run_name} | n_series={n_series}")
+        # We will suppress this to keep notebook output clean and structured
+        # log.info(f"Training TimeMixer | {run_name} | n_series={n_series}")
 
         params = {
             "asset_type":    asset_type,
@@ -124,17 +148,20 @@ class TimeMixerTrainer:
                 scaler_type=cfg.timemixer.scaler_type,
                 random_seed=self.seed,
                 start_padding_enabled=cfg.timemixer.start_padding_enabled,
+                batch_size=8,
+                enable_progress_bar=False,
+                enable_model_summary=False,
             )
 
             nf = NeuralForecast(models=[model], freq=self.freq)
             nf.fit(df=train_df)
 
             # Save model artifact
-            model_path = self._model_path(asset_type, horizon)
+            model_path = self._model_path(asset_type, horizon, ticker=ticker)
             self._save(nf, model_path)
             mlflow.log_artifact(str(model_path))
 
-            log.info(f"  ✓ Training complete | saved → {model_path}")
+            # log.info(f"  ✓ Training complete | saved → {model_path}")
 
         return nf
 
@@ -187,15 +214,19 @@ class TimeMixerTrainer:
     # Save / Load
     # ═══════════════════════════════════════════════════════════
 
-    def _model_path(self, asset_type: str, horizon: int) -> Path:
-        path = MODELS_DIR / f"{asset_type}_h{horizon}.pkl"
+    def _model_path(self, asset_type: str, horizon: int, ticker: Optional[str] = None) -> Path:
+        if ticker:
+            path = MODELS_DIR / asset_type / ticker / f"h{horizon}.pkl"
+        else:
+            path = MODELS_DIR / f"{asset_type}_h{horizon}.pkl"
+            
         path.parent.mkdir(parents=True, exist_ok=True)
         return path
 
     def _save(self, nf: NeuralForecast, path: Path) -> None:
         with open(path, "wb") as f:
             pickle.dump(nf, f)
-        log.info(f"  Model saved: {path}")
+        # log.info(f"  Model saved: {path}")
 
     def load(self, asset_type: str, horizon: int) -> NeuralForecast:
         """Load a previously trained model."""

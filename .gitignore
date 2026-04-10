@@ -1,34 +1,46 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Environments
-.env
-.venv
+*.so
+.Python
 env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Project Specific
-Data/*.csv            # Usually large data is ignored
-models/               # Pickle/model artifacts
-mlruns/               # MLflow artifacts
-results/figures/      # Locally generated figures
-results/tables/       # Locally generated tables
-results/metrics/      # Locally generated metrics (keep if you want a leaderboard in repo)
+# Virtual environments
+venv/
+.venv/
+.env
 
 # Jupyter Notebook
 .ipynb_checkpoints
-*/.ipynb_checkpoints/*
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# IDEs
+.vscode/
+.idea/
+
+# Machine Learning Logs
+mlruns/
+lightning_logs/
+.tensorboard/
+
+# Legacy and Ignored Data
+Code/
+*.zip
+*.tar.gz
+
+# Note: models/ is intentionally NOT ignored because Render needs the .pkl weights.
+# Note: Data/ is intentionally NOT ignored because the CSVs are required.

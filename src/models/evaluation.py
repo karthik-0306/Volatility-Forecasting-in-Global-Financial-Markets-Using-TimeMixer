@@ -107,10 +107,10 @@ class Evaluator:
             "N":        int(len(y_true)),
         }
 
-        log.info(
-            f"{model_name} | MAE={mae:.4f} RMSE={rmse:.4f} "
-            f"sMAPE={smape:.2f}% R²={r2:.4f} HitRate={hit_rate:.1f}%"
-        )
+        # log.info(
+        #     f"{model_name} | MAE={mae:.4f} RMSE={rmse:.4f} "
+        #     f"sMAPE={smape:.2f}% R²={r2:.4f} HitRate={hit_rate:.1f}%"
+        # )
         return metrics
 
     def compute_metrics_df(

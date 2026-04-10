@@ -1,0 +1,271 @@
+:root {
+    --bg-color: #0b0f19;
+    --panel-bg: rgba(17, 25, 40, 0.75);
+    --panel-border: rgba(255, 255, 255, 0.125);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #0ea5e9;
+    --accent-glow: #38bdf8;
+    --danger: #ef4444;
+    --safe: #22c55e;
+    --neutral: #eab308;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Glowing Orbs */
+.glow-orb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, rgba(11,15,25,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(60px);
+}
+#orb1 { top: -100px; left: -100px; }
+#orb2 { bottom: -200px; right: -100px; background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, rgba(11,15,25,0) 70%); }
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.accent {
+    color: var(--accent-glow);
+    text-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-areas: 
+        "sidebar visualizer"
+        "sidebar focus";
+    gap: 2rem;
+}
+.controls { grid-area: sidebar; }
+.visualizer { grid-area: visualizer; }
+.focus-panel { grid-area: focus; }
+
+
+/* Glass Panels */
+.glass-panel {
+    background: var(--panel-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--panel-border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Form Controls */
+h2 {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.small { font-size: 0.8rem; color: var(--text-muted); }
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--panel-border);
+    color: white;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+    appearance: none;
+    cursor: pointer;
+}
+select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+}
+select option { background: #111827; }
+
+/* Horizon Toggle Buttons */
+.horizon-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.hz-btn {
+    flex: 1;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid var(--panel-border);
+    color: var(--text-muted);
+    padding: 0.6rem 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.hz-btn:hover { background: rgba(255,255,255,0.1); }
+
+.hz-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+}
+
+.primary-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.5);
+}
+
+/* Chart Canvas Area */
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.daily-inspector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0,0,0,0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.daily-inspector label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.daily-inspector select {
+    width: auto;
+    padding: 0.4rem 2rem 0.4rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    color: var(--accent-glow);
+    font-weight: 600;
+}
+
+.chart-container {
+    height: 450px;
+    width: 100%;
+    position: relative;
+}
+
+/* Focus Panel */
+.focus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.badge.danger { background: rgba(239,68,68,0.2); color: var(--danger); border: 1px solid var(--danger); box-shadow: 0 0 15px rgba(239,68,68,0.3); }
+.badge.safe { background: rgba(34,197,94,0.2); color: var(--safe); border: 1px solid var(--safe); box-shadow: 0 0 15px rgba(34,197,94,0.3); }
+.badge.neutral { background: rgba(234,179,8,0.2); color: var(--neutral); border: 1px solid var(--neutral); }
+
+/* Statistics row */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.stat-box {
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.stat-box .label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+}
+.stat-box .value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+}

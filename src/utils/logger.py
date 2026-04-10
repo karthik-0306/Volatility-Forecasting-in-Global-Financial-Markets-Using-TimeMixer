@@ -45,7 +45,7 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
 
     # ── Console handler ────────────────────────────────────────
     console_handler = logging.StreamHandler(sys.stdout)
-    console_handler.setLevel(level)
+    console_handler.setLevel(logging.WARNING) # Suppress INFO logs for cleaner console Output 
     console_handler.setFormatter(fmt)
     logger.addHandler(console_handler)
 
