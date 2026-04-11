@@ -64,8 +64,11 @@ def predict_volatility(req: PredictRequest):
         v_ticker = req.ticker
         if req.asset_class == "forex" and not v_ticker.endswith("=X"):
             v_ticker += "=X"
-        elif req.asset_class == "crypto" and not v_ticker.endswith("-USD"):
-            v_ticker += "-USD"
+        elif req.asset_class == "crypto":
+            if v_ticker.endswith("USD") and not v_ticker.endswith("-USD"):
+                v_ticker = v_ticker[:-3] + "-USD"
+            elif not v_ticker.endswith("-USD"):
+                v_ticker += "-USD"
 
         yf_ticker = yf.Ticker(v_ticker)
         df_live = yf_ticker.history(period="6mo").reset_index()
