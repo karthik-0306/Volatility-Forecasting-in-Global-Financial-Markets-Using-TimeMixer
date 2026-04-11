@@ -42,16 +42,16 @@ body {
 .container {
     max-width: 1500px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 2rem;
 }
 
 header {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 800;
     letter-spacing: -1px;
 }
@@ -74,7 +74,7 @@ header p {
     grid-template-areas: 
         "sidebar visualizer"
         "sidebar focus";
-    gap: 1.5rem;
+    gap: 2rem;
 }
 .controls { grid-area: sidebar; }
 .visualizer { grid-area: visualizer; }
@@ -88,7 +88,7 @@ header p {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--panel-border);
     border-radius: 20px;
-    padding: 1.5rem;
+    padding: 2rem;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
@@ -216,7 +216,7 @@ select option { background: #111827; }
 }
 
 .chart-container {
-    height: 350px;
+    height: 450px;
     width: 100%;
     position: relative;
 }

@@ -67,7 +67,12 @@ def predict_volatility(req: PredictRequest):
         elif req.asset_class == "crypto" and not v_ticker.endswith("-USD"):
             v_ticker += "-USD"
 
-        yf_ticker = yf.Ticker(v_ticker)
+        import requests
+        session = requests.Session()
+        session.headers.update({
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+        })
+        yf_ticker = yf.Ticker(v_ticker, session=session)
         df_live = yf_ticker.history(period="6mo").reset_index()
 
         if len(df_live) < 100:
@@ -113,7 +118,7 @@ def predict_volatility(req: PredictRequest):
 
         # Format output payload
         dates = forecast['ds'].dt.strftime('%Y-%m-%d').tolist()
-        values = forecast['TimeMixer'].tolist()
+        values = [max(0.0, float(v)) for v in forecast['TimeMixer'].tolist()]
 
         # Extract history for context line
         hist_dates = vol_live['ds'].tail(96).dt.strftime('%Y-%m-%d').tolist()
