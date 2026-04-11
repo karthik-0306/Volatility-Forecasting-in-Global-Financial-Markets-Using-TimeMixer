@@ -46,12 +46,16 @@ body {
 .container {
     max-width: 1500px;
     margin: 0 auto;
-    padding: 2rem 2rem 0.2rem; /* Reduced bottom padding to perfectly eliminate native scrollbar at scaled height */
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 header h1 {
@@ -220,7 +224,7 @@ select option { background: #111827; }
 }
 
 .chart-container {
-    height: 360px; /* Scaled 80% from 450px */
+    height: 310px; /* Reduced to guarantee strict 100vh fit without scrollbar */
     width: 100%;
     position: relative;
 }
