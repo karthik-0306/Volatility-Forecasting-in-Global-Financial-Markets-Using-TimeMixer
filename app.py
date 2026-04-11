@@ -67,12 +67,7 @@ def predict_volatility(req: PredictRequest):
         elif req.asset_class == "crypto" and not v_ticker.endswith("-USD"):
             v_ticker += "-USD"
 
-        import requests
-        session = requests.Session()
-        session.headers.update({
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
-        })
-        yf_ticker = yf.Ticker(v_ticker, session=session)
+        yf_ticker = yf.Ticker(v_ticker)
         df_live = yf_ticker.history(period="6mo").reset_index()
 
         if len(df_live) < 100:
