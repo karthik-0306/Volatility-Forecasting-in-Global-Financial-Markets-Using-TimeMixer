@@ -1,6 +1,6 @@
 # Global Asset Volatility Forecaster (TimeMixer)
 
-[![Live Demo](https://img.shields.io/badge/Live_Dashboard-Ready-success?style=for-the-badge&logo=render)](https://global-asset-volatility-forecaster.onrender.com)
+[![Live Demo](https://img.shields.io/badge/Live_Dashboard-Ready-success?style=for-the-badge&logo=render)](https://global-asset-volatility-forecasting.onrender.com)
 
 A production-grade, Full-Stack Machine Learning application designed to forecast financial market volatility across 40 global assets. Built upon the latest **TimeMixer** (arXiv:2410.09062) deep learning architecture, this system completely decouples GPU training from real-time CPU inference via a high-performance **FastAPI** web dashboard.
 
