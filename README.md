@@ -4,7 +4,9 @@
 
 A production-grade, Full-Stack Machine Learning application designed to forecast financial market volatility across 40 global assets. Built upon the latest **TimeMixer** (arXiv:2410.09062) deep learning architecture, this system completely decouples GPU training from real-time CPU inference via a high-performance **FastAPI** web dashboard.
 
-![Dashboard Preview](static/dashboard_preview.png) *(Note: Add a screenshot of your web app here later!)*
+![Dashboard Preview](static/dashboard_preview.png) 
+<img width="1898" height="856" alt="image" src="https://github.com/user-attachments/assets/79a59cd7-73b8-494b-ae28-576f21ed6b77" />
+
 
 ---
 
